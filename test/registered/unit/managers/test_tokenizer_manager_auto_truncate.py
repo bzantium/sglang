@@ -1,8 +1,8 @@
 """Unit tests for tokenizer_manager._validate_one_request truncation behavior
-when allow_auto_truncate is enabled. Covers issue #21136: a too-long input
-should leave room for max_new_tokens and num_reserved_tokens so the request
-can still produce output, instead of being truncated to exactly context_len
-which forces max_new_tokens to 0.
+when allow_auto_truncate is enabled. A too-long input should leave room for
+max_new_tokens and num_reserved_tokens so the request can still produce
+output, instead of being truncated to exactly context_len which forces
+max_new_tokens to 0.
 """
 
 import unittest

@@ -828,7 +828,7 @@ class TokenizerManager(TokenizerControlMixin, TokenizerManagerScoreMixin):
                 # Leave room for max_new_tokens and reserved tokens so the
                 # request can still produce output after truncation; without
                 # this, truncating to exactly context_len forces max_new_tokens
-                # to 0 in the next check (issue #21136).
+                # to 0 in the next check.
                 target_input_len = max(
                     1,
                     _max_req_len - (max_new_tokens or 0) - self.num_reserved_tokens,
