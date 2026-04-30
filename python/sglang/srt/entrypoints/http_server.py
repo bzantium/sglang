@@ -1275,8 +1275,10 @@ async def release_memory_occupation(
 ):
     """Release GPU memory occupation temporarily."""
     try:
-        success, message = await _global_state.tokenizer_manager.release_memory_occupation(
-            obj, request
+        success, message = (
+            await _global_state.tokenizer_manager.release_memory_occupation(
+                obj, request
+            )
         )
     except Exception as e:
         return _create_error_response(e)
@@ -1294,8 +1296,8 @@ async def resume_memory_occupation(
 ):
     """Resume GPU memory occupation."""
     try:
-        success, message = await _global_state.tokenizer_manager.resume_memory_occupation(
-            obj, request
+        success, message = (
+            await _global_state.tokenizer_manager.resume_memory_occupation(obj, request)
         )
     except Exception as e:
         return _create_error_response(e)
