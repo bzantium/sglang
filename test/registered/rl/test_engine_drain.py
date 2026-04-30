@@ -1,6 +1,5 @@
 """Tests for the drain primitive — block until in-flight requests complete
-or a timeout elapses. The drain primitive is the first piece of the RL
-inner-loop API discussed in #24119 section 1.
+or a timeout elapses.
 
 The in-flight test uses the HTTP server because Engine.drain and Engine.generate
 both call self.loop.run_until_complete on the same event loop and cannot be
